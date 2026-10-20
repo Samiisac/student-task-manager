@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="no">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="theme-color" content="#f4f6f1">
+	<title>Student Task Manager</title>
+	<link rel="stylesheet" href="style.css">
+	<script src="script.js" defer></script>
+</head>
+<body>
+	<main class="page-shell">
+		<header class="page-heading">
+			<p class="eyebrow">STUDENT TASK MANAGER</p>
+			<h1>Oppgaveliste<span>.</span></h1>
+			<p class="intro">Skolearbeidet, samlet på ett sted.</p>
+		</header>
+		<figure class="student-illustration">
+			<img src="images/student-illustrasjon.png" alt="Illustrasjon av en oppgaveliste med bøker, plante og skrivesaker">
+			<figcaption>Illustrasjon generert med KI</figcaption>
+		</figure>
+
+		<section class="task-panel" aria-labelledby="task-heading">
+			<h2 id="task-heading">Legg til en oppgave</h2>
+			<form id="task-form" class="task-form">
+				<label class="visually-hidden" for="task-input">Oppgavens navn</label>
+				<input id="task-input" name="task" type="text" placeholder="For eksempel: Les kapittel 4" maxlength="120" required>
+				<button class="add-button" type="submit">Legg til <span aria-hidden="true">+</span></button>
+			</form>
+
+			<div class="list-heading">
+				<h2>Oppgavene dine</h2>
+			</div>
+			<ul id="task-list" class="task-list" aria-live="polite"></ul>
+			<p id="empty-state" class="empty-state">Ingen oppgaver ennå. Legg til den første ovenfor.</p>
+		</section>
+		<footer class="page-footer">Små steg teller.</footer>
+	</main>
+</body>
+</html>

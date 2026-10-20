@@ -1,0 +1,277 @@
+:root {
+	color-scheme: light;
+	--ink: #202c2a;
+	--muted: #71807b;
+	--paper: #ffffff;
+	--canvas: #f4f6f1;
+	--line: #e4e9e3;
+	--green: #236b55;
+	--green-dark: #194f40;
+	--coral: #d76e54;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	min-width: 320px;
+	min-height: 100vh;
+	margin: 0;
+	background-color: var(--canvas);
+	background-image: radial-gradient(#dce4dc 0.7px, transparent 0.7px);
+	background-size: 18px 18px;
+	color: var(--ink);
+	font-family: "Segoe UI", sans-serif;
+}
+
+button,
+input {
+	font: inherit;
+}
+
+.page-shell {
+	width: min(100% - 40px, 620px);
+	margin: 0 auto;
+	padding: 78px 0 36px;
+}
+
+.page-heading {
+	margin-bottom: 32px;
+}
+
+.eyebrow {
+	margin: 0 0 12px;
+	color: var(--green);
+	font-size: 0.72rem;
+	font-weight: 700;
+	letter-spacing: 0.12em;
+}
+
+h1,
+h2,
+p {
+	margin-top: 0;
+}
+
+h1 {
+	margin-bottom: 8px;
+	font-family: Georgia, "Times New Roman", serif;
+	font-size: clamp(2.4rem, 8vw, 3.5rem);
+	font-weight: 400;
+	line-height: 1.05;
+}
+
+h1 span {
+	color: var(--coral);
+}
+
+.intro {
+	margin-bottom: 0;
+	color: var(--muted);
+	font-size: 1rem;
+}
+
+.student-illustration {
+	width: min(100%, 400px);
+	margin: 0 auto 28px;
+	text-align: center;
+}
+
+.student-illustration img {
+	display: block;
+	width: 100%;
+	height: auto;
+	border-radius: 8px;
+}
+
+.student-illustration figcaption {
+	margin-top: 8px;
+	color: var(--muted);
+	font-size: 0.75rem;
+}
+
+.task-panel {
+	padding: 28px;
+	border: 1px solid rgba(32, 44, 42, 0.06);
+	border-radius: 8px;
+	background: var(--paper);
+	box-shadow: 0 16px 42px rgba(32, 44, 42, 0.07);
+}
+
+.task-panel h2 {
+	margin-bottom: 14px;
+	font-size: 1rem;
+	font-weight: 650;
+}
+
+.task-form {
+	display: flex;
+	gap: 10px;
+}
+
+.task-form input {
+	width: 100%;
+	min-width: 0;
+	height: 48px;
+	padding: 0 14px;
+	border: 1px solid var(--line);
+	border-radius: 5px;
+	outline: none;
+	background: #fcfdfb;
+	color: var(--ink);
+	transition: border-color 150ms ease, box-shadow 150ms ease;
+}
+
+.task-form input::placeholder {
+	color: #9aa59f;
+}
+
+.task-form input:focus {
+	border-color: var(--green);
+	box-shadow: 0 0 0 3px rgba(35, 107, 85, 0.12);
+}
+
+.add-button {
+	display: inline-flex;
+	flex: 0 0 auto;
+	align-items: center;
+	justify-content: center;
+	gap: 8px;
+	min-width: 112px;
+	min-height: 48px;
+	padding: 0 16px;
+	border: 0;
+	border-radius: 5px;
+	background: var(--green);
+	color: #fff;
+	font-weight: 650;
+	cursor: pointer;
+	transition: background 150ms ease, transform 150ms ease;
+}
+
+.add-button:hover {
+	transform: translateY(-1px);
+	background: var(--green-dark);
+}
+
+.add-button span {
+	font-size: 1.25rem;
+	font-weight: 400;
+	line-height: 1;
+}
+
+.list-heading {
+	display: flex;
+	align-items: center;
+	margin-top: 32px;
+	padding-top: 22px;
+	border-top: 1px solid var(--line);
+}
+
+.list-heading h2 {
+	margin: 0;
+}
+
+.task-list {
+	display: grid;
+	gap: 8px;
+	margin: 14px 0 0;
+	padding: 0;
+	list-style: none;
+}
+
+.task-item {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	min-height: 58px;
+	padding: 10px 12px;
+	border: 1px solid var(--line);
+	border-radius: 5px;
+	background: #fff;
+}
+
+.task-checkbox {
+	width: 18px;
+	height: 18px;
+	flex: 0 0 auto;
+	margin: 0;
+	accent-color: var(--green);
+	cursor: pointer;
+}
+
+.task-text {
+	flex: 1;
+	overflow-wrap: anywhere;
+	line-height: 1.45;
+}
+
+.task-item.is-complete .task-text {
+	color: #929d97;
+	text-decoration: line-through;
+}
+
+.delete-button {
+	flex: 0 0 auto;
+	padding: 7px 8px;
+	border: 0;
+	border-radius: 4px;
+	background: transparent;
+	color: #a45240;
+	font-size: 0.85rem;
+	cursor: pointer;
+}
+
+.delete-button:hover {
+	background: #fbefec;
+	color: #873d2d;
+}
+
+.empty-state {
+	margin: 14px 0 0;
+	padding: 18px 12px;
+	border: 1px dashed #d8e0d9;
+	border-radius: 5px;
+	color: var(--muted);
+	font-size: 0.92rem;
+	text-align: center;
+}
+
+.page-footer {
+	padding-top: 20px;
+	color: var(--muted);
+	font-family: Georgia, "Times New Roman", serif;
+	font-size: 0.9rem;
+	font-style: italic;
+	text-align: center;
+}
+
+.visually-hidden {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	clip-path: inset(50%);
+}
+
+@media (max-width: 480px) {
+	.page-shell {
+		width: min(100% - 28px, 620px);
+		padding-top: 48px;
+	}
+
+	.task-panel {
+		padding: 20px 16px;
+	}
+
+	.task-form {
+		flex-direction: column;
+	}
+
+	.add-button {
+		width: 100%;
+	}
+}
